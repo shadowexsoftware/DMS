@@ -1,0 +1,8 @@
+/* src/index.css */
+
+
+@import "tailwindcss";
+
+/* только то, что не ломает утилиты */
+html, body, #root { height: 100%; }
+/* Никаких @apply здесь не используем */

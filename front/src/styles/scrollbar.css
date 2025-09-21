@@ -1,0 +1,49 @@
+/*src/styles/scrollbar.css*/
+/* Универсальная утилита: навесьте class="custom-scroll" на любой overflow-* контейнер */
+
+/* Firefox */
+.custom-scroll{
+  scrollbar-width: thin;                 /* тонкий */
+  scrollbar-color: rgba(100,116,139,.6)  /* thumb (slate-500/60) */
+                   transparent;          /* track */
+}
+@media (prefers-color-scheme: dark){
+  .custom-scroll{
+    scrollbar-color: rgba(148,163,184,.5) /* slate-400/50 */
+                     transparent;
+  }
+}
+
+/* WebKit (Chromium, Safari, Edge) */
+.custom-scroll::-webkit-scrollbar{
+  width: 10px;
+  height: 10px;
+}
+.custom-scroll::-webkit-scrollbar-track{
+  background: transparent;
+}
+.custom-scroll::-webkit-scrollbar-thumb{
+  background-clip: padding-box;
+  background: rgba(100,116,139,.6);      /* slate-500/60 */
+  border: 2px solid transparent;         /* зазор между треком и бегунком */
+  border-radius: 9999px;                  /* pill */
+}
+.custom-scroll:hover::-webkit-scrollbar-thumb{
+  background: rgba(100,116,139,.75);
+}
+.custom-scroll::-webkit-scrollbar-thumb:active{
+  background: rgba(71,85,105,.85);       /* slate-600/85 */
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark){
+  .custom-scroll::-webkit-scrollbar-thumb{
+    background: rgba(148,163,184,.5);    /* slate-400/50 */
+  }
+  .custom-scroll:hover::-webkit-scrollbar-thumb{
+    background: rgba(148,163,184,.7);
+  }
+  .custom-scroll::-webkit-scrollbar-thumb:active{
+    background: rgba(203,213,225,.8);    /* slate-300/80 */
+  }
+}

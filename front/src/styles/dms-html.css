@@ -1,0 +1,23 @@
+
+/*src/styles/dms-html.css*/
+/* Сбрасываем фон/цвет у ВСЕГО, что приходит из API */
+.dms-html, .dms-html :where(*) {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+/* Таблицы — прозрачные границы, без белого фона */
+.dms-html table { width: 100%; border-collapse: collapse; }
+.dms-html th, .dms-html td {
+  border: 1px solid rgba(148,163,184,.35); /* slate-400/35 */
+  padding: .25rem .5rem;
+}
+@media (prefers-color-scheme: dark) {
+  .dms-html th, .dms-html td { border-color: rgba(100,116,139,.35); } /* slate-500/35 */
+}
+
+/* Часто прилетает именно lark-doc c белым фоном */
+.dms-html .lark-doc { background-color: transparent !important; }
+
+/* Изображения — адаптивно */
+.dms-html img { max-width: 100%; height: auto; border-radius: .5rem; }
